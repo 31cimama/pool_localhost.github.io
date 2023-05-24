@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Giriş Yap</title>
+</head>
+<body>
+  <h2>Giriş Yap</h2>
+  <input type="text" id="giris-isim" placeholder="Kullanıcı Adı"><br>
+  <input type="password" id="giris-sifre" placeholder="Şifre"><br>
+  <button onclick="girisYap()">Giriş Yap</button>
+  <button onclick="kayitSayfasi()">Kayıt Ol</button>
+
+  <script>
+    function girisYap() {
+      var kayitliIsim = localStorage.getItem("kullaniciAdi");
+      var kayitliSifre = localStorage.getItem("sifre");
+      var girisIsim = document.getElementById("giris-isim").value;
+      var girisSifre = document.getElementById("giris-sifre").value;
+
+      if (girisIsim === kayitliIsim && girisSifre === kayitliSifre) {
+        alert("Giriş başarılı! Ana sayfaya yönlendiriliyorsunuz.");
+        window.location.href = "anasayfa.html";
+      } else {
+        alert("Kullanıcı adı veya şifre hatalı!");
+      }
+    }
+
+    function kayitSayfasi() {
+      window.location.href = "kayit.html";
+    }
+  </script>
+</body>
+</html>

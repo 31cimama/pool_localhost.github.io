@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kayıt Ol</title>
+</head>
+<body>
+  <h2>Kayıt Ol</h2>
+  <input type="text" id="kayit-isim" placeholder="Kullanıcı Adı"><br>
+  <input type="password" id="kayit-sifre" placeholder="Şifre"><br>
+  <button onclick="kayitOl()">Kayıt Ol</button>
+  <button onclick="girisSayfasi()">Dön</button>
+
+  <script>
+    function kayitOl() {
+      var isim = document.getElementById("kayit-isim").value;
+      var sifre = document.getElementById("kayit-sifre").value;
+      localStorage.setItem("kullaniciAdi", isim);
+      localStorage.setItem("sifre", sifre);
+      alert("Kayıt başarılı! Giriş yapabilirsiniz.");
+      window.location.href = "giris.html";
+    }
+
+    function girisSayfasi() {
+      window.location.href = "giris.html";
+    }
+  </script>
+</body>
+</html>
